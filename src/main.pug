@@ -1,0 +1,46 @@
+//-Variables
+- let imgRoute = "Plugs_Scripts/Img/"
+- let portrait = "(orientation:portrait)"
+- let landscape = "(orientation:landscape)"
+- let imagenes = ["Construccion", "constructor", "excavator", "poz"];
+- let l = imagenes.length
+- let alts = ["Construcción"];
+- let altr = "Construcción"
+//-mixin para construir bloque de img en el slider
+
+mixin slider(imgage, alter)
+   .swiper-container
+      .swiper-wrapper
+         .swiper-slide
+            picture
+               source(srcset=`${imgRoute}${imgage}.jpg` media=portrait)
+               source(srcset=`${imgRoute}${imgage}.jpg` media=landscape)
+               source(srcset=`${imgRoute}${imgage}.jpg`)
+               img(class="carrusel" src=`${imgRoute}${imgage}.jpg` alt=alter)
+
+
+
+section
+   //Sección principal de la página.
+   .magnate
+      h2 Grupo Magnate:
+      p(class="parrafo").
+         Grupo Magnate es una empresa mexicana capacitada y
+         certificada en la industria de la construcción,
+         integrada por un equipo de trabajo de alto rendimiento,
+         nuestro enfoque principal es cubrir
+         las necesidades de su proyecto implementando
+         la mejor solución a sus necesidades
+         de cimentación, acabado, perforación entre otras.
+   //-Lo siguiente me va a permitir iterar a través de mi arreglo de imagenes.
+   - for (let x = 0; x < l+1; x++)
+      case x
+         default
+            +slider(imagenes[x],altr)
+         when l
+            .swiper-pagination
+
+
+
+   //-for i in imagenes
+      +slider(i,altr)
