@@ -119,7 +119,7 @@
               super Polifil es mucho más fácil de utilizar que cualquier bentonita
               <strong>5 galones de polímero SUPER POLIFIL = </strong>
               <span class="bentonita">1 tonelada de bentonita convencional</span>.
-              
+
               Usos: En agua salada, estancada, con presencia de petróleo o combustibles.
               Aditivo de perforación estabilizador, evita pérdida de fluido y derrumbes.
               Fill / Sello, disminución de sólidos, agente floculante.
@@ -132,24 +132,24 @@
         <div class="contenedor">
           <div class="elemento"><img src="Plugs_Scripts/Imagenes/drill.jpg" alt="kit de broca para concreto" max-width="100%"/>
             <p class="deImg">kit de broca para concreto
-              
-              
-              
+
+
+
             </p><img src="Plugs_Scripts/Imagenes/drill3.jpg" alt="Broca para concreto" max-width="100%"/>
             <p class="deImg">Broca para concreto
-              
-              
-              
+
+
+
             </p><img src="Plugs_Scripts/Imagenes/drill6.jpg" alt="Broca multiusos" max-width="100%"/>
             <p class="deImg">Broca multiusos
-              
-              
-              
+
+
+
             </p><img src="Plugs_Scripts/Imagenes/drill9.jpg" alt="Esmeriles especializados" max-width="100%"/>
             <p class="deImg">Esmeriles especializados
-              
-              
-              
+
+
+
             </p>
           </div>
         </div>
@@ -175,7 +175,42 @@
     </main>
     <footer>
       <!--My footer-->
+      <div class="container">
+        <h3 class="mapa">Mapa del sitio.</h3>
+        <div class="item" id="gmap"></div>
+      </div>
+      <div class="formulario">
+        <form id="form">
+          <input id="name" type="text" placeholder="NAME"/>
+          <input id="email" type="text" placeholder="E-MAIL"/>
+          <textarea id="message" type="text" placeholder="MESSAGE"></textarea>
+          <input id="submit" type="submit" value="Contactar."/>
+        </form>
+      </div>
+      <div class="social">
+        <div class="sociales"><span>Puedes seguirnos en las redes sociales.</span></div>
+        <div class="so">
+          <div class="sociales1"><i class="fa fa-facebook-official icono" aria-hidden="true"></i><i class="fa fa-twitter icono" aria-hidden="true"></i><i class="fa fa-linkedin-square icono" aria-hidden="true"></i><i class="fa fa-google-plus icono" aria-hidden="true"></i></div>
+        </div>
+        <div class="copiright"><i class="fa fa-copyright" aria-hidden="true"><span>__By McB0y.</span></i></div>
+      </div>
     </footer>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="https://use.fontawesome.com/f9b0ff375d.js"></script>
+    <script src="Plugs_Scripts/JQuery_Plugins/parallax.min.js" charset="utf-8"></script>
+    <script src="script.js" charset="utf-8"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCqPSHyvqJ6J6hqnV6w-ErMQ11b6Y_g3nw" async="async" defer="defer"></script>
+    <script src="Plugs_Scripts/JQuery_Plugins/app.js" charset="utf-8"></script>
+    <script src="Swiper-master/dist/js/swiper.jquery.min.js" charset="utf-8"></script>
+    <script>
+      $(document).ready(function () {
+      //initialize swiper when document ready
+      var mySwiper = new Swiper ('.swiper-container', {
+        pagination: '.swiper-pagination',
+        paginationClickable: true
+        });
+      });
+    </script>
     <script src="https://code.jquery.com/jquery-{{JQUERY_VERSION}}.min.js"></script>
     <script> window.jQuery || document.write('<script src="js/vendor/jquery-{{JQUERY_VERSION}}.min.js"><\/script>')</script>
     <script src="js/plugins.js"></script>
