@@ -1,0 +1,473 @@
+*,p{margin: 0px; padding: 0px;}
+
+body{
+   width: 100%;
+   height: auto;
+   /* NOTE: Dando Flex */
+   display: flex;
+   flex-direction: column;
+   /*background-color: rgb(147, 142, 142);*/
+
+/*    background-color: #6c6c6c; */
+    background-image: linear-gradient(rgb(255, 174, 65), rgb(241, 85, 42));
+
+}
+
+img{
+   max-width: 100%;
+}
+picture{
+   width: 90%;
+}
+
+/* NOTE: Empiezan los estilos de la cabecera */
+header{
+   width: 100%;
+   height: 8em;
+   background-color: rgb(245, 64, 29);
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   font-size: 2em;
+   color: rgb(224, 193, 28);
+}
+h1{
+   font-family:Yellowtail;
+   word-spacing: 15px;
+   letter-spacing: 8px;
+   color: rgb(242, 205, 7);
+}
+.iconos{
+   margin-top: 10px;
+   width: 100%;
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+}
+.elem{
+   font-family: Rakkas;
+}
+nav{
+   width: 100%;
+   margin-top: 1em;
+}
+
+nav>ul{
+   width: 100%;
+   display: flex;
+   justify-content: space-around;
+}
+
+ ul{
+   list-style: none;
+}
+
+h2,h3{
+   font-size: 3em;
+   text-indent: 20px;
+   color :rgb(245, 64, 29);
+   font-family: Yellowtail;
+}
+.magnate{
+   margin: 1em;
+}
+
+.superPolifil,.productos, .socios,footer{
+   width: 100%;
+}
+.polifil{
+   font-size: 4em;
+}
+.parrafo{
+   width: calc(100% -1.5em);
+   margin: 1.5em;
+   font-family: Sansita One;
+   font-size: 1.3em;
+   text-align: justify;
+   color: rgb(231, 207, 39);
+}
+.parrafo1{
+   margin: 1em;
+   font-size: 1.7em;
+}
+.bentonita{
+   text-decoration: underline;
+}
+
+
+
+/***********************Terminan los estilos de la cabecera*********************/
+
+/***********************Empiezan los estilos para el main y sus elementos******/
+
+.parallax{
+   width: 100%;
+   height: 600px;
+}
+
+.empresa{
+   display: flex;
+   flex-wrap: wrap;
+}
+.superPolifil{
+   display: flex;
+   flex-direction: column;
+   width: 100%;
+   height: 100vh;
+}
+h3{
+   line-height: 100px;
+}
+
+/***********************Swiper Slider*********/
+.swiper-container {
+   margin-top: 2em;
+   margin-bottom: 2em;
+   width: 100%;
+   height: 90vh;
+}
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+/*     background: #6c6c6c;NOTE: Necesita el fondo */
+   background-color: transparent;
+
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+
+
+/***********************Muestras.**************************/
+
+.contenedor{
+   width: 100%;
+   height: 300px;
+   display: flex;
+   flex-wrap: wrap;
+   background-color: rgb(225, 170, 242);
+}
+
+.elemento{
+   width: 25%;
+   /*height: 100%;*/
+   overflow: hidden;
+}
+.elemento > img{
+   height: 300px;
+}
+
+.deImg{/*Los parrafos*/
+   margin: 0px;
+   padding: 0px;
+   width: 100%;
+   height: 100%;
+   text-align: center;
+   background-color: rgba(0, 0, 0, 0.8);
+   color: white;
+   font-size: 1.2em;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   position: relative;
+   top: -304px;
+   transition: all .5s;
+}
+.deImg:hover{
+top: 0;
+}
+
+/* NOTE: La seccion de distribuidores */
+.partner{
+   width: 100%;
+   height: auto;
+   display: flex;
+   justify-content: center;
+   font-size:1.7em;
+}
+.container1{
+/*background-color: rgb(147, 142, 142);*/
+/* background-color: #6c6c6c; */
+background-color: transparent;
+width: 100%;
+height: 20em;
+display: flex;
+flex-wrap: wrap;
+justify-content: space-around;
+align-items: center;
+}
+
+/*Empiezan los estilos del footer.*/
+.container{
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+   align-content: center;
+}
+.mapa{
+  font-size: 4.5em;
+}
+
+
+#gmap{
+   width: 50%;
+   height: 400px;
+   max-width: 100%;
+   max-height: 100vh;
+   box-shadow: 2px 2px 2px 2px;
+   margin-bottom: 20px;
+}
+
+.social{
+   width: 100%;
+   height: auto;
+   display: flex;
+   flex-direction: column;
+   color: rgb(244, 148, 37);
+}
+
+.sociales1{
+   font-size: 2em;
+   color: rgb(82, 82, 82);
+}
+.sociales1>i:hover{
+   transition: all .5s;
+   color: rgb(244, 148, 37);
+}
+.sociales, .copiright{
+   width: 100%;
+   height: 3em;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   background-color: rgb(17, 16, 13);
+}
+   .so{
+      width: 100%;
+      height: 3em;
+      background-color: rgb(17, 16, 13);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+   }
+.sociales1{
+   width: 15em;
+   height: auto;
+   display: flex;
+   justify-content: space-between;
+ }
+
+
+/*****************Tiny-Tweaks , Off-Canvas****************/
+
+@media (max-width: 1200px){
+   header{
+      font-size: 1.3em;
+   }
+   h1{
+      font-size: 2.5;
+   }
+   h2,h3{
+      font-size: 2.5em;
+   }
+   .parrafo{
+      font-size: 1.3em;
+   }
+   .contenedor{
+      width: 100%;
+      height: 600px;
+      display: flex;
+      flex-wrap: wrap;
+      /*background-color: rgb(225, 170, 242);*/
+      background-color: #6c6c6c;
+   }
+
+   .elemento{
+      width: 50%;
+      height: 50%;
+      overflow: hidden;
+   }
+   .elemento > img{
+      width: 100%;
+      height: 300px;
+   }
+   .polifil{
+      font-size: 3em;
+   }
+   .parrafo1{
+      margin: 1em;
+      font-size: 1.4em;
+   }
+   .partner{
+      font-size:1.4em;
+   }
+   .mapa{
+     font-size: 3.5em;
+   }
+   .social{
+      width: 100%;
+      height: auto;
+      display: flex;
+      flex-direction: column;
+      color: rgb(244, 148, 37);
+      font-size: 1.1em;
+   }
+
+   .sociales1{
+      font-size: 1.5em;
+      color: rgb(82, 82, 82);
+   }
+}
+
+@media (max-width: 720px){
+
+   h1{
+      font-size: 1.3em;
+   }
+
+   h2,h3{
+      font-size: 2em;
+   }
+
+   .parrafo{
+      font-size: 1.2em;
+   }
+
+   .off-canvas{
+   flex-wrap: wrap;
+   width: 100%;
+   height: 100vh;
+   position: absolute;
+   top: 0px;
+   transform: translate(-100%, 0);
+   transition: transform 0.3s ease-out;
+   line-height: 5em;
+   text-align: center;
+   font-weight: bold;
+   z-index: 2;
+   }
+
+   .elem{
+      width: 100%;
+      background-color:rgb(245, 64, 29);
+      color: rgb(249, 241, 50);
+      border-bottom: 1px solid;
+   }
+
+   .open{
+      /* NOTE: Se agrega con JS */
+      transform: translate(0,0);
+   }
+   #menuBoton{
+      margin-top: 5px;
+      width: 32px;
+      height: 32px;
+      background: url("Plugs_Scripts/Imagenes/menu2.png");
+   }
+   .contenedor{
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      /*background-color: rgb(225, 170, 242);*/
+      background-color: #6c6c6c;
+   }
+
+   .elemento{
+      width: 100%;
+      height: 350px;;
+      overflow: hidden;
+   }
+   .elemento > img{
+      width: 100%;
+      height: 100%
+   }
+   .deImg{
+      margin: 0px;
+      padding: 0px;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      background-color: rgba(0, 0, 0, 0.8);
+      color: white;
+      font-size: 1.2em;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      top: -354px;
+      transition: all .5s;
+   }
+   .deImg:hover{
+   top: 0;
+   }
+
+   .polifil{
+      font-size: 2em;
+   }
+   .parrafo1{
+      margin: 1em;
+      font-size: 1.2em;
+   }
+   .partner{
+      font-size:1.3em;
+   }
+   .mapa{
+     font-size: 2.5em;
+   }
+   .social{
+      width: 100%;
+      height: auto;
+      display: flex;
+      flex-direction: column;
+      color: rgb(244, 148, 37);
+      font-size: 1.1em;
+   }
+
+   .sociales1{
+      font-size: 1.1em;
+      color: rgb(82, 82, 82);
+   }
+}
+
+@media (max-width: 450px){
+   .superPolifil{
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      height: 125vh;
+   }
+   .partner{
+      width: 100%;
+      height: auto;
+      display: flex;
+      justify-content: center;
+      font-size:1.1em;
+   }
+   .mapa{
+     font-size: 2em;
+   }
+   .social{
+      width: 100%;
+      height: auto;
+      display: flex;
+      flex-direction: column;
+      color: rgb(244, 148, 37);
+      font-size: 1em;
+   }
+
+   .sociales1{
+      font-size: 1em;
+      color: rgb(82, 82, 82);
+   }
+}
