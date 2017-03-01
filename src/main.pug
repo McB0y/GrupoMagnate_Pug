@@ -6,17 +6,39 @@
 - let l = imagenes.length
 - let alts = ["Construcción"];
 - let altr = "Construcción"
+//-Sección de finalización del slider.
+
+- let textoSangria = ["Polímeros para la estabilización de excavaciones", "Equipo para la perforación", "Plantas para enlechado", "Equipo usado", "Herramienta para acabado", "Equipo de alta tensión"];
+- let pD = ["parrafo", "parrafo1"];//-hay parrafos con estas 2 clases.
+//-Imagenes usadas para crear el parallax
+- let imgParallax1 = "/Plugs_Scripts/Imagenes/excavators2.jpg"
+- let imgParallax2 = "/Plugs_Scripts/Imagenes/excavators5.jpg"
+
+//-Imagenes de productos
+- let productos = ["drill.jpg", "drill3.jpg", "drill6.jpg", "drill9.jpg"];
+- let ln = productos.length
+//-Descripción de las imagenes y atributo alt.
+- let alt2 = ["kit de broca para concreto", "Broca para concreto", "Broca multiusos", "Esmeriles especializados"];
+//- Ruta de las imagenes.
+- let ruta = "Plugs_Scripts/Imagenes/"
+
+//-Imagenes de los sociosde la empresa.
+- let imgSocios = ["Spiradrill.jpg", "digga.png", "PDS.jpg"];
+- let lng = imgSocios.length
+//-Atributos alt de socios.
+- let alt3 = ["Spiradrill tools", "Digga tools", "PDS Co"];
+
+
 //-mixin para construir bloque de img en el slider
 
 mixin slider(imgage, alter)
-   .swiper-container
-      .swiper-wrapper
-         .swiper-slide
-            picture
-               source(srcset=`${imgRoute}${imgage}.jpg` media=portrait)
-               source(srcset=`${imgRoute}${imgage}.jpg` media=landscape)
-               source(srcset=`${imgRoute}${imgage}.jpg`)
-               img(class="carrusel" src=`${imgRoute}${imgage}.jpg` alt=alter)
+   .swiper-wrapper
+      .swiper-slide
+         picture
+            source(srcset=`${imgRoute}${imgage}.jpg` media=portrait)
+            source(srcset=`${imgRoute}${imgage}.jpg` media=landscape)
+            source(srcset=`${imgRoute}${imgage}.jpg`)
+            img(class="carrusel" src=`${imgRoute}${imgage}.jpg` alt=alter)
 
 
 
@@ -33,14 +55,81 @@ section
          la mejor solución a sus necesidades
          de cimentación, acabado, perforación entre otras.
    //-Lo siguiente me va a permitir iterar a través de mi arreglo de imagenes.
-   - for (let x = 0; x < l+1; x++)
-      case x
-         default
-            +slider(imagenes[x],altr)
-         when l
-            .swiper-pagination
+   .swiper-container
+      - for (let x = 0; x < l+1; x++)
+         case x
+            default
+               +slider(imagenes[x],altr)
+            when l
+               .swiper-pagination
+   .empresa
+      h2 Duck-Enter:
+      p.
+         Duck-Enter es una empresa incorporada a Grupo Magnate siendo intermediaria
+         en la cadena de subministros y socia distribuidora de productos americanos
+         con los que se tienen trato directo.
+      h2 Soluciones de polímero.
+      p.
+         Nuestra amplia gama basada en soluciones a base de polímero proveen
+         a su negocio y garantiza su completa satisfacción. Nuestra
+         experiencia puede resolver sus necesidades en las siguientes áreas:
+      //Tenmos las fuentes tipograficas (viñetas "i"), deshacerse de ellas seria opcional.
+      ul(class="fa-ul")
+         for valor in textoSangria
+            li(class="parrafo") #[i(class="fa fa-truck" aria-hidden="true") #{valor}]
+
+   //Nuestra 1ra img y contenedor con efecto parallax.
+   div(
+      class="parallax"
+      data-parallax="scroll"
+      data-image-src=imgParallax1
+      )
+   .dividida
+      .superPolifil
+         h3.polifil Super Polifil
+         //-Tendre que hacer uso de la anidación de las etiquetas.
+         p(class=pD).
+            Super Polifil es una suspensión de polímero líquido que se utiliza
+            principalmente como un agente para aumentar la viscosidad
+            y como un estabilizador de suelos, ambientalmente seguro para
+            prevenir el desprendimiento y/o colapso de una perforación.
+            super Polifil es mucho más fácil de utilizar que cualquier bentonita
+            #[strong 5 galones de polímero SUPER POLIFIL = ]
+            #[span(class="bentonita") 1 tonelada de bentonita convencional].
+
+            Usos: En agua salada, estancada, con presencia de petróleo o combustibles.
+            Aditivo de perforación estabilizador, evita pérdida de fluido y derrumbes.
+            Fill / Sello, disminución de sólidos, agente floculante.
+            #[strong Certificado por la AVDPII (Asosiación Verificadora de Polímeros Internacional e Inventada)].
+            //Nuestro Contenedor con efecto parallax.
+      div(
+         class="parallax"
+         data-parallax="scroll"
+         data-image-src=imgParallax2
+         )
+
+   //- La variable "ab" representa la longitud del array productos y la puse por que tenia problemas interpolando con el parentesis el valor.
+   .contenedor
+      .elemento
+         -for(let y=0; y<ln; y++)
+            - let ab = alt2[y];
+            img( src=`${ruta}`+productos[y] alt=alt2[y] max-width="100%")
+            p(class="deImg").
+               #{ab}
 
 
 
-   //-for i in imagenes
-      +slider(i,altr)
+   //Sección de socios.
+
+   .partner
+      h3 Algunos de nuestros socios.
+   .container1
+      - for(let z = 0; z < lng+1; z++)
+         div
+            picture
+               img( src=`${ruta}`+imgSocios[z]
+                    alt=alt3[z]
+                    width="200px"
+                    height="100px"
+                    class="bw"
+                    )
