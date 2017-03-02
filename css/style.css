@@ -372,7 +372,7 @@ align-items: center;
       margin-top: 5px;
       width: 32px;
       height: 32px;
-      background: url("Plugs_Scripts/Imagenes/menu2.png");
+      background: url("../js/Plugs_Scripts/Imagenes/menu2.png");
    }
    .contenedor{
       width: 100%;

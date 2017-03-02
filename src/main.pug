@@ -1,5 +1,5 @@
 //-Variables
-- let imgRoute = "Plugs_Scripts/Img/"
+- let imgRoute = "./js/Plugs_Scripts/Img/"
 - let portrait = "(orientation:portrait)"
 - let landscape = "(orientation:landscape)"
 - let imagenes = ["Construccion", "constructor", "excavator", "poz"];
@@ -11,8 +11,8 @@
 - let textoSangria = ["Polímeros para la estabilización de excavaciones", "Equipo para la perforación", "Plantas para enlechado", "Equipo usado", "Herramienta para acabado", "Equipo de alta tensión"];
 - let pD = ["parrafo", "parrafo1"];//-hay parrafos con estas 2 clases.
 //-Imagenes usadas para crear el parallax
-- let imgParallax1 = "/Plugs_Scripts/Imagenes/excavators2.jpg"
-- let imgParallax2 = "/Plugs_Scripts/Imagenes/excavators5.jpg"
+- let imgParallax1 = "./js/Plugs_Scripts/Imagenes/excavators2.jpg"
+- let imgParallax2 = "./js/Plugs_Scripts/Imagenes/excavators5.jpg"
 
 //-Imagenes de productos
 - let productos = ["drill.jpg", "drill3.jpg", "drill6.jpg", "drill9.jpg"];
@@ -20,7 +20,7 @@
 //-Descripción de las imagenes y atributo alt.
 - let alt2 = ["kit de broca para concreto", "Broca para concreto", "Broca multiusos", "Esmeriles especializados"];
 //- Ruta de las imagenes.
-- let ruta = "Plugs_Scripts/Imagenes/"
+- let ruta = "./js/Plugs_Scripts/Imagenes/"
 
 //-Imagenes de los sociosde la empresa.
 - let imgSocios = ["Spiradrill.jpg", "digga.png", "PDS.jpg"];
@@ -31,14 +31,13 @@
 
 //-mixin para construir bloque de img en el slider
 
-mixin slider(imgage, alter)
-   .swiper-wrapper
-      .swiper-slide
-         picture
-            source(srcset=`${imgRoute}${imgage}.jpg` media=portrait)
-            source(srcset=`${imgRoute}${imgage}.jpg` media=landscape)
-            source(srcset=`${imgRoute}${imgage}.jpg`)
-            img(class="carrusel" src=`${imgRoute}${imgage}.jpg` alt=alter)
+mixin slider(image, alter)
+   .swiper-slide
+      picture
+         source(srcset=`${imgRoute}${image}.jpg` media=portrait)
+         source(srcset=`${imgRoute}${image}.jpg` media=landscape)
+         source(srcset=`${imgRoute}${image}.jpg`)
+         img(class="carrusel" src=`${imgRoute}${image}.jpg` alt=alter)
 
 
 
@@ -56,20 +55,23 @@ section
          de cimentación, acabado, perforación entre otras.
    //-Lo siguiente me va a permitir iterar a través de mi arreglo de imagenes.
    .swiper-container
-      - for (let x = 0; x < l+1; x++)
-         case x
-            default
-               +slider(imagenes[x],altr)
-            when l
-               .swiper-pagination
+      .swiper-wrapper
+         - for (let x = 0; x < l; x++)
+            case x
+               default
+                  +slider(imagenes[x],altr)
+               when l
+                  .swiper-pagination
+      .swiper-pagination
+
    .empresa
       h2 Duck-Enter:
-      p.
+      p(class="parrafo").
          Duck-Enter es una empresa incorporada a Grupo Magnate siendo intermediaria
          en la cadena de subministros y socia distribuidora de productos americanos
          con los que se tienen trato directo.
       h2 Soluciones de polímero.
-      p.
+      p(class="parrafo").
          Nuestra amplia gama basada en soluciones a base de polímero proveen
          a su negocio y garantiza su completa satisfacción. Nuestra
          experiencia puede resolver sus necesidades en las siguientes áreas:
@@ -110,12 +112,12 @@ section
 
    //- La variable "ab" representa la longitud del array productos y la puse por que tenia problemas interpolando con el parentesis el valor.
    .contenedor
-      .elemento
-         -for(let y=0; y<ln; y++)
-            - let ab = alt2[y];
+      -for(let y=0; y<ln; y++)
+         - let ab = alt2[y];
+         .elemento
             img( src=`${ruta}`+productos[y] alt=alt2[y] max-width="100%")
             p(class="deImg").
-               #{ab}
+                  #{ab}
 
 
 
@@ -124,7 +126,7 @@ section
    .partner
       h3 Algunos de nuestros socios.
    .container1
-      - for(let z = 0; z < lng+1; z++)
+      - for(let z = 0; z < lng; z++)
          div
             picture
                img( src=`${ruta}`+imgSocios[z]
