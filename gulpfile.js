@@ -8,7 +8,7 @@ const pug = require('gulp-pug');
 //creando nuestras tareas.
 // NOTE: La función pug debe recibir un objeto con las opcciones correspondientes a l salida deseada del file
 gulp.task('pug', ()=>{
-   gulp.src('./src/*.pug')
+   gulp.src('./src/index.pug')
        .pipe(pug({
           pretty : true //esta opción nos regresa una version sin minificar
        }))
